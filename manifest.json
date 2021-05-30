@@ -1,16 +1,16 @@
 {
-	"name": "VitaminDashboard",
-	"short_name": "VitaminDashboard",
+	"name": "EveIsHere",
+	"short_name": "EveIsHere",
 	"icons": [{
-		"src": "Assets/Images/D-128.png",
+		"src": "Assets/Images/eve-is-here-128.png",
 		"sizes": "128x128",
 		"type": "image/png"
 	}, {
-	"src": "Assets/Images/D-256.png",
+	"src": "Assets/Images/eve-is-here-256.png",
 	"sizes": "256x256",
 	"type": "image/png"
 	}, {
-	"src": "Assets/Images/D-512.png",
+	"src": "Assets/Images/eve-is-here-512.png",
 	"sizes": "512x512",
 	"type": "image/png"
 	}],
