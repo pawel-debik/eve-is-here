@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VitaminDashboard</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />  
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="Assets/Css/style.css">
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0" />
+	<link rel="apple-touch-icon" href="Assets/Images/D-180.png">  
+	<meta name="apple-mobile-web-app-status-bar" content="#c262b7">
+	<meta name="theme-color" content="#c262b7"/>
+	<link rel="manifest" href="manifest.json">
+</head>
+<body class="body homepage">
+	<div class="content-wrap">
+		<header class="app-header">
+			<h1 class="app-header-title">Vitamin <strong class="d">D</strong>ashboard</h1>
+			<div class="profile-button">
+				<img class="profile-button__image" src="Assets/Images/profile.svg" alt="">
+			</div>
+		</header>
+		<main class="page uv-app">
+			<div class="block block-uv">
+				<div class="uv-index">
+					<div class="uv-index-forecast">
+						<canvas id="uv-chart" class="uv-chart"></canvas>
+					</div>
+					<div class="uv-index-now">
+						<svg viewBox="0 0 22 21">
+							<text class="uv-index-now_number number" x="0" y="15">0</text>
+						</svg>
+						<p class="uv-index-now_label">UV index</p>
+					</div>	
+				</div>		
+			</div>
+			<div class="block block-factors">
+				<div class="factor factor-clothes">
+					<img class="clothes clothes-placeholder" src="Assets/Images/clothes-1.svg">
+					<img class="clothes clothes-1" src="Assets/Images/clothes-1.svg">
+					<img class="clothes clothes-2" src="Assets/Images/clothes-2.svg">
+					<img class="clothes clothes-3 active" src="Assets/Images/clothes-3.svg">
+					<img class="clothes clothes-4" src="Assets/Images/clothes-4.svg">
+					<img class="clothes clothes-5" src="Assets/Images/clothes-5.svg">
+					<input type="range" min="1" max="5" value="1" class="slider clothes-slider" id="clothes-slider">
+				</div>
+				<div class="factor factor-cloud-coverage cloud-coverage-0">
+					<img id="sun" class="sun" src="./Assets/Images/sun.svg">
+					<img id="cloud1" class="cloud cloud1" src="./Assets/Images/cloud.svg">
+					<img id="cloud2" class="cloud cloud2" src="./Assets/Images/cloud.svg">
+					<input type="range" min="1" max="5" value="0" class="slider cloud-coverage-slider" id="cloud-coverage-slider">
+				</div>
+				<div class="factor factor-age">
+					<p class="label factor-age_label">AGE</p>
+					<p class="factor-age_number number">22</p>
+					<input type="range" min="1" max="99" value="22" class="slider age-slider" id="age-slider">
+				</div>
+				<div class="factor factor-spf">
+					<p class="label factor-spf_label">SPF</p>
+					<p class="factor-spf_number number">0</p>
+					<input type="range" min="0" max="60" value="0" class="slider spf-slider" id="spf-slider">
+				</div>
+				<div class="factor factor-bmi">
+					<p class="label factor-bmi_label">BMI</p>
+					<p class="factor-bmi_number number">22</p>
+					<input type="range" min="10" max="50" value="22" class="slider bmi-slider" id="bmi-slider">
+				</div>
+			</div>
+			<div class="block block-time">
+				<div class="chart-container">
+					<canvas id="time-chart"></canvas>
+				</div>
+				<ul class="skin-types">
+					<li class="skin-type skin-type-1">I</li>
+					<li class="skin-type skin-type-2">II</li>
+					<li class="skin-type skin-type-3">III</li>
+					<li class="skin-type skin-type-4">IV</li>
+					<li class="skin-type skin-type-5">V</li>
+					<li class="skin-type skin-type-6">VI</li>
+				</ul>
+			</div>
+		</main> <!-- end of uv-app -->
+		<div id="signup-page" class="page signup hidden">
+			<div class="block block-signup">
+				<div class="signup-header">
+					<h2 class="app-header-title-small">Log in or create a profile</h2>
+					<p class="app-header-subtitle">By creating a profile, your settings will be preserved on your next visit</p>
+				</div>
+				<form id="signup-form" class="signup-form">
+					<div class="form-row">
+						<label for="signup-form__email" class="form-label">E-mail address</label>
+						<input id="signup-form__email" type="email" placeholder="example@example.com">
+					</div>
+					<div class="form-row">
+						<label for="signup-form__password" class="form-label">Password</label>
+						<input id="signup-form__password" type="password" placeholder="123">
+					</div>
+					<div class="form-row bottom-row">
+						<button id="signup-button" class="signup-button">Sign up</button>
+					</div>
+				</form>
+			</div>
+		</div> <!-- end of signup -->
+		<div class="blob-bg">
+			<svg id="blob-bg__image" class="blob-bg__image" height="100%" width="100%" viewBox="0 0 300 777" preserveAspectRatio="none">
+				<defs><style>.cls-1{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:url(#color-gradient);}</style>
+					<linearGradient id="color-gradient" x1="567.3" y1="-351.76" x2="567.3" y2="-1197.12" gradientTransform="matrix(1, 0, 0, 0.83, -4.47, 997.61)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#a870bb"/><stop offset="1" stop-color="#e97393"/></linearGradient>
+				</defs>
+				<path class="cls-3"  fill="#fff" d="M 0 40   C 0 10 0 -20 0 -20   C 210 -20 240 -20 300 -20   C 300 777 300 777 300 777   C 300 777 290 777 233 777   C 150 777 170 777 110 777  C 30 777 0 777 0 777" >
+				</path>
+			</svg>
+		</div> <!-- end of blob-bg -->
+	</div> <!-- end of content-wrap -->
+
+	<script src="Assets/Js/chart.js"></script>
+	<script src="Assets/Js/actions.js"></script>
+<!-- 
+ To Do:
+	- Tweak calculation
+	- Make skin type clickable, so that you just see the values for that skin type. But make it so you can go back to overview of skin types
+	- design and implement a button that opens a full page data sheet about the App and vitamin d
+	- Design a timer that you can start, which will cound down the minutes you need to be outside. When you adjust the sliders while the timer is running, it will then dynamically gain or lose time
+	- When clouds are adjusted, maybe it should adjust the UV index as well
+	- Paid app might include:
+		- Save preferences like age / skin color / location / etc.
+		- Input your personal goal (change the 4000 IU default)
+		- Keep a log of of vitamin d by uv exposure
+		- Customize clothing
+		- 
+		- Receive mailing, like one tip per day for a week about getting healthy vitamin d levels
+  -->
+</body>
+</html>
